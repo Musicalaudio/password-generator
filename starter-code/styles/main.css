@@ -1,0 +1,181 @@
+:root {
+  /* colors */
+  --background: hsl(255, 22%, 4%);
+  --dark-grey: hsl(248, 10%, 15%);
+  --grey: hsl(251, 9%, 53%);
+  --almost-white: hsl(252, 11%, 91%);
+  --very-dark-grey: hsl(248, 15%, 11%);
+  --neon: hsl(127, 100%, 82%);
+  --red: hsl(0, 91%, 63%);
+  --orange: hsl(13, 95%, 66%);
+  --yellow: hsl(42, 91%, 68%);
+
+  /* typography */
+  --fs-l: 1.5rem;
+  --fs-m: 1.125rem;
+  --fs-reg: 1rem;
+
+  --fw-reg: 700;
+
+  --ff-base: "JetBrains Mono Bold";
+}
+
+@font-face {
+  font-family: "JetBrains Mono Bold"; /*why cant i refer var(--ff-vase)*/
+  src: url(../assets/fonts/JetBrainsMono-VariableFont_wght.ttf);
+  font-weight: var(--fw-reg);
+}
+
+body {
+  background-color: var(--background);
+  font-family: var(--ff-base);
+  color: var(--almost-white);
+  display: grid;
+  align-content: center;
+}
+
+body > * + * {
+  width: 100%;
+  background-color: var(--dark-grey);
+  max-width: 21.4375rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: var(--fs-body);
+  color: var(--grey);
+}
+
+.password {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1.1875rem;
+}
+
+.generated-pw {
+}
+
+.copy-btn {
+  background-color: transparent;
+  background-image: url(../assets/images/icon-copy.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 24px;
+}
+
+.char-length {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.char-length__number {
+  color: var(--neon);
+  font-size: var(--fs-l);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding-block: 1.5rem 2rem;
+}
+
+input {
+  accent-color: var(--neon);
+  cursor: pointer;
+}
+
+input[type="range"] {
+  background: var(--very-dark-grey);
+  margin-top: 1rem;
+}
+
+form ul {
+  margin-top: 2rem;
+  --margin-top: 1.1875rem;
+}
+
+form li {
+  font-size: var(--ff-base);
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 1.5em;
+}
+
+input[name="pw__criteria"] {
+  appearance: none;
+  --webkit-appearance: none;
+  background-color: transparent;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--almost-white);
+}
+
+input[name="pw__criteria"]:checked {
+  box-shadow: inset 2em 2em var(--neon);
+  content: url("../assets/images/icon-check.svg");
+  padding: 25% 15%;
+  border: none;
+}
+
+.pw__strength-container {
+  background-color: var(--very-dark-grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-transform: uppercase;
+  --wrapper-padding-inline: 2rem;
+  padding-block: 1.25rem;
+  margin-block: 2rem;
+}
+
+.pw__strength-container > p {
+  font-size: var(--fs-reg);
+  color: var(--grey);
+}
+
+.pw__strength {
+  font-size: var(--fs-m);
+}
+
+.generate-btn {
+  background-color: var(--neon);
+  text-transform: uppercase;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+}
+
+.generate-btn:hover {
+  color: var(--neon);
+  outline: 2px solid var(--neon);
+  background-color: transparent;
+}
+
+@media (min-width: 33.75rem) {
+  :root {
+    --fs-l: 2rem;
+    --fs-m: 1.5rem;
+    --fs-reg: 1.125rem;
+  }
+}
+
+.wrapper {
+  margin-inline: auto;
+  padding-inline: var(--wrapper-padding-inline, 1rem);
+}
+
+.flow > * + * {
+  margin-top: var(--margin-top, 1rem);
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

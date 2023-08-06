@@ -1,29 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Password generator app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./main.js" defer></script>
+    <title>Frontend Mentor | Password generator app</title>
+  </head>
+  <body class="flow wrapper">
+    <h1>Password Generator</h1>
 
-  Password Generator
-
-  P4$5W0rD!
-
-  Character Length
-
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
-
-  Strength
-
-  Generate
-
-</body>
+    <div class="wrapper password">
+      <p class="generated-pw">P4$5W0rD!</p>
+      <button type="button" aria-describedby="copy-btn" class="copy-btn">
+        <span id="copy-btn" class="sr-only"> Click to copy to clipboard </span>
+      </button>
+    </div>
+    <form class="wrapper">
+      <div class="char-length">
+        <p>Character Length</p>
+        <p class="char-length__number">10</p>
+      </div>
+      <input
+        type="range"
+        id="char-length"
+        name="char-length"
+        min="0"
+        max="20" />
+      <ul class="flow">
+        <li>
+          <input type="checkbox" id="pw__uppercase" name="pw__criteria" />
+          <label for="pw__uppercase"> Include Uppercase Letters </label>
+        </li>
+        <li>
+          <input type="checkbox" id="pw__lowercase" name="pw__criteria" />
+          <label for="pw__lowercase"> Include Lowercase Letters </label>
+        </li>
+        <li>
+          <input type="checkbox" id="pw__numbers" name="pw__criteria" />
+          <label for="pw__numbers"> Include Numbers </label>
+        </li>
+        <li>
+          <input type="checkbox" id="pw__symbols" name="pw__criteria" />
+          <label for="pw__symbols"> Include Symbols </label>
+        </li>
+      </ul>
+      <div class="wrapper pw__strength-container">
+        <p>Strength</p>
+        <div class="">
+          <!-- change div above to template -->
+          <p class="pw__strength">WEAK</p>
+          <div class="pw__strength-meter" aria-hidden="true">
+            <div class="strength-1"></div>
+            <div class="strength-2"></div>
+            <div class="strength-3"></div>
+            <div class="strength-4"></div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="generate-btn">
+        Generate <span class="arrow"></span>
+      </button>
+    </form>
+  </body>
 </html>
