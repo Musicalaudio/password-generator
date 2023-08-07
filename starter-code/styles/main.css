@@ -52,7 +52,15 @@ h1 {
   padding-block: 1.1875rem;
 }
 
+.password > div {
+  color: var(--neon);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .generated-pw {
+  font-size: var(--fs-l);
 }
 
 .copy-btn {
@@ -60,8 +68,9 @@ h1 {
   background-image: url(../assets/images/icon-copy.svg);
   background-position: center;
   background-repeat: no-repeat;
-  width: 21px;
-  height: 24px;
+  width: 1.3125rem;
+  height: 1.5rem;
+  cursor: pointer;
 }
 
 .char-length {
@@ -126,7 +135,7 @@ input[name="pw__criteria"]:checked {
   align-items: center;
   width: 100%;
   text-transform: uppercase;
-  --wrapper-padding-inline: 2rem;
+  --wrapper-padding-inline: 1rem;
   padding-block: 1.25rem;
   margin-block: 2rem;
 }
@@ -136,8 +145,59 @@ input[name="pw__criteria"]:checked {
   color: var(--grey);
 }
 
-.pw__strength {
+.pw__strength-container > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.pw__strength-lvl {
   font-size: var(--fs-m);
+}
+
+.pw__strength-lvl {
+}
+
+.pw__strength-meter {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pw__strength-meter > * {
+  border: var(--almost-white) 2px solid;
+  width: 0.625rem;
+  height: 1.75rem;
+}
+
+.pw__strength-meter.too-weak {
+  --str-clr-tw: var(--red);
+}
+
+.pw__strength-meter.weak {
+  --str-clr-w: var(--orange);
+}
+
+.pw__strength-meter.medium {
+  --str-clr-m: var(--yellow);
+}
+
+.pw__strength-meter.strong {
+  --str-clr-s: var(--neon);
+}
+
+.str-1 {
+  background-color: var(--str-clr-tw);
+}
+
+.str-2 {
+  background-color: var(--str-clr-w);
+}
+
+.str-3 {
+  background-color: var(--str-clr-m);
+}
+
+.str-4 {
+  background-color: var(--str-clr-s);
 }
 
 .generate-btn {

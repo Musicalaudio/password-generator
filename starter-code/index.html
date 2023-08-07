@@ -19,9 +19,14 @@
 
     <div class="wrapper password">
       <p class="generated-pw">P4$5W0rD!</p>
-      <button type="button" aria-describedby="copy-btn" class="copy-btn">
-        <span id="copy-btn" class="sr-only"> Click to copy to clipboard </span>
-      </button>
+      <div>
+        <p class="pw__is-copied"></p>
+        <button type="button" aria-describedby="copy-btn" class="copy-btn">
+          <span id="copy-btn" class="sr-only">
+            Click to copy to clipboard
+          </span>
+        </button>
+      </div>
     </div>
     <form class="wrapper">
       <div class="char-length">
@@ -33,35 +38,53 @@
         id="char-length"
         name="char-length"
         min="0"
-        max="20" />
+        max="20"
+        autocomplete="off" />
+
       <ul class="flow">
         <li>
-          <input type="checkbox" id="pw__uppercase" name="pw__criteria" />
+          <input
+            type="checkbox"
+            id="pw__uppercase"
+            name="pw__criteria"
+            autocomplete="off" />
           <label for="pw__uppercase"> Include Uppercase Letters </label>
         </li>
         <li>
-          <input type="checkbox" id="pw__lowercase" name="pw__criteria" />
+          <input
+            type="checkbox"
+            id="pw__lowercase"
+            name="pw__criteria"
+            autocomplete="off" />
           <label for="pw__lowercase"> Include Lowercase Letters </label>
         </li>
         <li>
-          <input type="checkbox" id="pw__numbers" name="pw__criteria" />
+          <input
+            type="checkbox"
+            id="pw__numbers"
+            name="pw__criteria"
+            autocomplete="off" />
           <label for="pw__numbers"> Include Numbers </label>
         </li>
         <li>
-          <input type="checkbox" id="pw__symbols" name="pw__criteria" />
+          <input
+            type="checkbox"
+            id="pw__symbols"
+            name="pw__criteria"
+            autocomplete="off" />
           <label for="pw__symbols"> Include Symbols </label>
         </li>
       </ul>
       <div class="wrapper pw__strength-container">
         <p>Strength</p>
-        <div class="">
+        <div class="pw__strength">
           <!-- change div above to template -->
-          <p class="pw__strength">WEAK</p>
+          <p class="pw__strength-lvl"></p>
           <div class="pw__strength-meter" aria-hidden="true">
-            <div class="strength-1"></div>
-            <div class="strength-2"></div>
-            <div class="strength-3"></div>
-            <div class="strength-4"></div>
+            <div class="str-1 str-2 str-3 str-4"></div>
+            <div class="str-2 str-3 str-4"></div>
+            <div class="str-3 str-4"></div>
+            <div class="str-4"></div>
           </div>
         </div>
       </div>
