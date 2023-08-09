@@ -38,6 +38,9 @@ body > * + * {
   width: 100%;
   background-color: var(--dark-grey);
   max-width: 21.4375rem;
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+  /* at min width there is overflow when password is max length and we copy it with the button*/
 }
 
 h1 {
@@ -49,6 +52,7 @@ h1 {
 .password {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding-block: 1.1875rem;
 }
 
@@ -206,6 +210,10 @@ input[name="pw__criteria"]:checked {
     --fs-l: 2rem;
     --fs-m: 1.5rem;
     --fs-reg: 1.125rem;
+  }
+
+  body > * + * {
+    max-width: 33.75rem;
   }
 }
 

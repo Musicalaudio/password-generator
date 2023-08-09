@@ -1,7 +1,6 @@
 let finalResult = document.querySelector(".generated-pw");
 let copy = document.querySelector(".copy-btn");
 let rangeInput = document.querySelector("#char-length");
-let pwLength = rangeInput.value;
 let charLength = document.querySelector(".char-length__number");
 let form = document.querySelector("form");
 let meter = document.querySelector(".pw__strength-meter");
@@ -19,7 +18,7 @@ let allCharacters = {
 let pwCriteria = [];
 
 window.onload = function () {
-  charLength.innerText = pwLength;
+  charLength.innerText = rangeInput.value;
 };
 
 rangeInput.addEventListener("input", (e) => {
@@ -53,12 +52,13 @@ form.addEventListener("submit", (e) => {
   let password = "";
   let possibleCharactersLength = characters.length;
   console.log(possibleCharactersLength);
-  for (let i = 0; i < pwLength; i++) {
+  for (let i = 0; i < rangeInput.value; i++) {
     password += characters.charAt(
       Math.floor(Math.random() * possibleCharactersLength)
     );
   }
   finalResult.innerText = password;
+  console.log(rangeInput.value);
 });
 
 copy.addEventListener("click", (e) => {
