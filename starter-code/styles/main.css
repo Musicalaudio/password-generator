@@ -73,6 +73,10 @@ h1 {
   cursor: pointer;
 }
 
+.pw__is-copied {
+  display: none;
+}
+
 .char-length {
   display: flex;
   align-items: center;
@@ -168,36 +172,20 @@ input[name="pw__criteria"]:checked {
   height: 1.75rem;
 }
 
-.pw__strength-meter.too-weak {
-  --str-clr-tw: var(--red);
-}
-
-.pw__strength-meter.weak {
-  --str-clr-w: var(--orange);
-}
-
-.pw__strength-meter.medium {
-  --str-clr-m: var(--yellow);
-}
-
-.pw__strength-meter.strong {
-  --str-clr-s: var(--neon);
-}
-
 .str-1 {
-  background-color: var(--str-clr-tw);
+  background-color: var(--red);
 }
 
 .str-2 {
-  background-color: var(--str-clr-w);
+  background-color: var(--orange);
 }
 
 .str-3 {
-  background-color: var(--str-clr-m);
+  background-color: var(--yellow);
 }
 
 .str-4 {
-  background-color: var(--str-clr-s);
+  background-color: var(--neon);
 }
 
 .generate-btn {
@@ -228,6 +216,10 @@ input[name="pw__criteria"]:checked {
 
 .flow > * + * {
   margin-top: var(--margin-top, 1rem);
+}
+
+.display-block {
+  display: block;
 }
 
 .sr-only:not(:focus):not(:active) {
