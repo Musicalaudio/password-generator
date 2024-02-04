@@ -57,7 +57,9 @@ form.addEventListener("submit", (e) => {
       Math.floor(Math.random() * possibleCharactersLength)
     );
   }
+
   finalResult.innerText = password;
+  document.querySelector(".pw__is-copied").classList.remove("display-block");
   console.log(rangeInput.value);
 });
 
